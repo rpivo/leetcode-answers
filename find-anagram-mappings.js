@@ -12,6 +12,10 @@
  * @param {number[]} B
  * @return {number[]} 
  */
+
+let A = [ 1, 2, 3, 4, 5 ];
+let B = [ 5, 4, 3, 2, 1 ];
+
 var anagramMappings = function(A, B) {
 
 };
