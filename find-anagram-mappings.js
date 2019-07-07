@@ -13,18 +13,15 @@
  * @return {number[]} 
  */
 
-let A = [ 40, 40 ];
-let B = [ 40, 40 ];
+let A = [ 40, 40, 1 ];
+let B = [ 40, 40, 1 ];
 
 var anagramMappings = function(A, B) {
   let C = [];
-  A.forEach((aNumber) => {
-    B.forEach((bNumber) => {
-      // aNumber === bNumber && C.push(B.indexOf(aNumber));
-      if (aNumber === bNumber && )
-    });
+  A.forEach((number) => {
+    C.push(B.lastIndexOf(number));
   });
   return(C);
-};
+}
 
 console.log(anagramMappings(A, B));
