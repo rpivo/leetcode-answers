@@ -4,9 +4,16 @@
  */
 
 var fixedPoint = function(A) {
-  return 'floop';
+  for (i = 0; i < A.length; i++) {
+    if (A.indexOf(i) > -1 && i === A[i]) {
+      console.log(A.indexOf(i));
+      break;
+    } else if (i === (A.length - 1)) {
+      console.log(-1);
+    }
+  }
 };
 
-A = [ 1, 2, 3, 4, 5 ];
+A = [ -10, -5, 0, 3, 7 ];
 
-console.log(fixedPoint(A));
+fixedPoint(A);
