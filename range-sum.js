@@ -11,8 +11,28 @@
  * @param {number} L
  * @param {number} R
  * @return {number}
+ * 
+ * definition for a binary tree node:
+ * function treeNode(val) {
+ *  this.val = val;
+ *  this.left = this.right = null;
+ * }
+ * 
  */
 
- var rangeSumBST = function(root, L, R) {
-
+ var rangeSumBST = function(node, L, R) {
+  let sum = 0;
+  node.forEach((number) => {
+    if (number >= L && number <= R) {
+      sum += number;
+    }
+  });
+  return sum;
  };
+
+node = [10,5,15,3,7,null,18];
+
+L = 7;
+R = 15;
+
+console.log(rangeSumBST(node, L, R));
