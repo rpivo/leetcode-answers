@@ -43,39 +43,34 @@ class Node {
  */
 class BinarySearchTree {
   constructor() {
-    // root of a binary search tree
     this.root = null;
   }
 
-  // helper method which creates a new node to be inserted and calls insertNode
   insert(data) {
 
-    // creating a node and initializing with data
     var newNode = new Node(data);
 
-    // if root is null, then node will be added to the tree and made root.
     if (this.root === null) {
       this.root = newNode;
-    // if root is not null, find the correct position in the tree and add the node.
     } else {
       this.insertNode(this.root, newNode);
     }
 
   }
 
-  // method to insert a node in a tree. it moves over the tree to find the location to insert a
-  // node with given data.
   insertNode(node, newNode) {
 
-    // if the new node's data value is less than the current node's data value, move left in the
-    // tree.
     if (newNode.data < node.data) {
-      // if left node is null, insert new node here
       if (node.left === null) {
         node.left = newNode;
-      // if left node is not null, recur and traverse down this left node.
       } else {
         this.insertNode(node.left, newNode);
+      }
+    } else {
+      if (node.right === null) {
+        node.right = newNode;
+      } else {
+        this.insertNode(node.right, newNode);
       }
     }
 
