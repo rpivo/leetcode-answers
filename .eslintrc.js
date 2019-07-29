@@ -14,6 +14,7 @@ module.exports = {
     "max-len": 0,
     "no-confusing-arrow": 0,
     "no-param-reassign": 0,
+    "no-plusplus": ["error", {"allowForLoopAfterthoughts": true }],
     "no-nested-ternary": 0,
     "no-undef": 0,
     "react/destructuring-assignment": 0,
