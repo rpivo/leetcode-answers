@@ -1,5 +1,12 @@
-let S = "leetcodeisacommunityforcoders";
+let string = "leetcodeisacommunityforcoders";
 
 var removeVowels = function(S) {
-    console.log(S);
+  S = S.replace(/a/g, '')
+    .replace(/e/g, '')
+    .replace(/i/g, '')
+    .replace(/o/g, '')
+    .replace(/u/g, '');
+  console.log(S);
 };
+
+removeVowels(string);
