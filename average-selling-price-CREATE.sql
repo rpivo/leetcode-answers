@@ -9,6 +9,6 @@ CREATE TABLE prices
 CREATE TABLE unitssold
 (
     product_id INT,
-    purchase_date INT,
+    purchase_date DATE,
     units INT,
 );
