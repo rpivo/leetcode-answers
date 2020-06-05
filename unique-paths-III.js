@@ -19,7 +19,7 @@ const uniquePathsIII = grid => {
 
   let paths = 0;
 
-  const getNextMoves = (point, arr, solution = []) => {
+  const getNextMoves = (point, arr) => {
     const [row, column] = point;
 
     const moves = [
@@ -38,17 +38,16 @@ const uniquePathsIII = grid => {
           const [pointRow, pointColumn] = arr[i];
 
           if (moveRow === pointRow && moveColumn === pointColumn) {
-            solution.push([moveRow, moveColumn]);
             let tempArr = [...arr];
             tempArr.splice(i, 1); 
-            getNextMoves(move, tempArr, solution);
+            getNextMoves(move, tempArr);
           }
         }
       }
     }
   };
 
-  getNextMoves(start, movableSpaces, []);
+  getNextMoves(start, movableSpaces);
 
   return paths;
 };
