@@ -1,14 +1,14 @@
 // type 
 type Node = {
-  value: string | null;
-  left: string | null;
-  right: string | null;
+	value: string | null;
+	left: string | null;
+	right: string | null;
 };
 
 
 // example graph
 const tree: {
-  [key: string]: Node
+	[key: string]: Node
 } = {
 	"10": {
 		value: "10",
@@ -51,24 +51,24 @@ const tree: {
 // rootNode = current root
 // searchValue = node that is being searched for
 const breadthFirstSearch = (tree: [], rootNode: Node, searchValue: string) => {
-  // create a queue
-  const queue = [];
-  // push the current rootNode to the queue
-  queue.push(rootNode);
-  // while the queue has items
-  while (queue.length > 0) {
-    // create a copy of the current item in queue
-    const current: Node = queue[0];
-    // if the value of the current item equals the searchValue
-    if (current.value === searchValue) {
-      // print success
-      console.log('searchValue has been found.');
-      // close
+	// create a queue
+	const queue = [];
+	// push the current rootNode to the queue
+	queue.push(rootNode);
+	// while the queue has items
+	while (queue.length > 0) {
+		// create a copy of the current item in queue
+		const current: Node = queue[0];
+		// if the value of the current item equals the searchValue
+		if (current.value === searchValue) {
+			// print success
+			console.log('searchValue has been found.');
+			// close
 			return;
-    }
-    // if the left property of the current item is not equal to null
-    if (current.left !== null) {
-      // push current.left to the queue
+		}
+		// if the left property of the current item is not equal to null
+		if (current.left !== null) {
+			// push current.left to the queue
 			queue.push(tree[current.left as unknown as number]);
 		}
 		// if the right property of the current item is not equal to null
@@ -78,7 +78,7 @@ const breadthFirstSearch = (tree: [], rootNode: Node, searchValue: string) => {
 		}
 		// remove the first item in the queue, which was just processed
 		queue.shift();
-  }
-  // print message if searchValue is not found
-  console.log('searchValue not found.');
+	}
+	// print message if searchValue is not found
+	console.log('searchValue not found.');
 };
