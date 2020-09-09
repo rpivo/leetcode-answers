@@ -24,3 +24,4 @@ class Solution:
         # add char value i to out
           out += i
     return out
+    
