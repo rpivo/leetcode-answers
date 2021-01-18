@@ -1,4 +1,5 @@
 function deleteNodes(head: ListNode | null, m: number, n: number): ListNode | null {
+
   function addNode() {
     resultPointer.next = new ListNode()
     resultPointer = resultPointer.next  
