@@ -8,8 +8,7 @@ function sortSentence(s: string): string {
   const len = words.length;
 
   // return the result of calling reduce on words. As the starting value for
-  // the reduce, we'll use a new array of length len, and join each item in 
-  // this array with a space ' '.
+  // the reduce, we'll use a new array of length len.
   return words.reduce((res, word) => {
     // note that the original solution for this used substr instead of
     // substring. With substr, you can use a negative index to get a substring
@@ -26,8 +25,8 @@ function sortSentence(s: string): string {
     // There is a problem with this solution here. We get the error "Index
     // signature in type 'String' only permits reading."
 
-    // @ts-ignor
     res[idx] = word.substring(0, word.length - 1);
     return res;
-  }, new Array(len).join(' '));
+    // after the reduce, join each item in the array by spaces.
+  }, new Array(len)).join(' ');
 }
